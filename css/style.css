@@ -81,3 +81,16 @@ color: #373737;
         border-right: none;
     }
 }
+
+.proj_img {
+    width:40%; 
+    height:auto; 
+    float: left; 
+    padding-right: 10px;
+}
+
+.content, .sidebar, .proj_img {
+        width: 100%;
+        float: none;
+        border-right: none;
+    }
