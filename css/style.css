@@ -30,4 +30,16 @@
             color: #fff;
         }
 
+        .sidebar {
+  width: 220px;
+  min-width: 220px; /* prevents it from shrinking */
+  flex-shrink: 0;   /* stops it from being squished */
+}
+
+.main-content {
+  padding: 30px 40px;
+  flex: 1; /* takes up remaining space */
+}
+        
+
     
