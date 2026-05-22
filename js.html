@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="js/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script src="js/script.js"></script>
 </head>
 <body>
-    <script>
-    // JavaScript code goes here
-    var fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
-    document.write(fruits.join(", "));
-    </script>
-    <br>
-    <script>
-        // evoking the function from script.js
-        document.write(greetings("Alex Okama"));
-    </script>
-    <br>
+<body onload="starTime()">
+<script>
+// JavaScript code goes here
+var fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+document.write(fruits.join(", "));
+</script>
+<br>
+<script>
+// evoking the function from script.js
+document.write(greetings("Alex Okama"));
+</script>
+<br>
     <script>
         // Get the current date and time
         var today = new Date();
@@ -25,11 +26,46 @@
         var month = today.getMonth() + 1; // Months are zero-based
         var year = today.getFullYear();
         document.write("Today's date is: " + day + "/" + month + "/" + year);
-        var hours = today.getHours();
-        var minutes = today.getMinutes();
-        var seconds = today.getSeconds();
-        document.write("<br>Current time is: " + hours + ":" + minutes + ":" + seconds);
-
     </script>
+<p id="realTime"></p>
+
+<script>
+    var colours = ["Red", "Green", "Blue", "Yellow", "Purple"];
+    document.write(colours[0] + "<br>"); // Output: Red
+    document.write(colours[1] + "<br>"); // Output: Green
+    document.write(colours[2] + "<br>"); // Output: Blue
+
+    //Objects
+    var userDetails = {
+        "Director":{
+            "fullname": ["Alex Okama"],
+            "email": {
+                "Home email": "alex.okama@company.com",
+                "Work email": "alex.okama@work.com"
+            },
+            "phone": "123-456-7890"
+        },
+        "Manager":{
+        "fullname": ["Jane", "Smith"],
+        "email": {
+            "Home email": "jane.smith@example.com",
+            "Work email": "jane.smith@work.com"
+        },
+        "phone": "987-654-3210"
+    },
+    "Secretary":{
+        "fullname": "Emily Davis",
+        "email": {
+            "Home email": "emily.davis@example.com",
+            "Work email": "emily.davis@work.com"
+        },
+        "phone": "555-123-4567"
+        },
+    };
+    document.write(userDetails.Director.fullname.join("")+ "<br>"); // Output: Alex Okama
+    document.write(userDetails.Secretary.email["Home email"] + "<br>"); //Here you have to use the bracket notation instead of the dot notation because the attribute "Home email" has a space in it
+    document.write(userDetails.Manager.email["Work email"] + "<br>"); // Output: jane.smith@work.com
+    document.write(userDetails.Secretary.phone + "<br>"); // Output: 555-123-4567
+</script>
 </body>
 </html>
