@@ -63,9 +63,35 @@ document.write(greetings("Alex Okama"));
         },
     };
     document.write(userDetails.Director.fullname.join("")+ "<br>"); // Output: Alex Okama
-    document.write(userDetails.Secretary.email["Home email"] + "<br>"); //Here you have to use the bracket notation instead of the dot notation because the attribute "Home email" has a space in it
+    document.write(userDetails.Secretary.email["Home email"] + "<br>"); //POSSIBLE EXAM QUESTION: Here you have to use the bracket notation instead of the dot notation because the attribute "Home email" has a space in it
     document.write(userDetails.Manager.email["Work email"] + "<br>"); // Output: jane.smith@work.com
     document.write(userDetails.Secretary.phone + "<br>"); // Output: 555-123-4567
+
+
+     // Loops in JavaScript
+    // Rule repeat action until a certain condition is met i < 5
+    // initialize a variable i = 0
+    // increment i by 1 in each iteration
+    // maximum value of i = 5
+    // =================
+    // While loop
+    // =================
+document.write("<h3>While Loop</h3>");
+var i = 0; // initialize a variable i to 0
+while(i < 5){ // repeat the action until i is less than 5
+    document.write("The value of i is: " + i + "<br>"); // print the value of i in each iteration
+    i++; // increment i by 1 in each iteration
+}
+
+    // =================
+    // do While loop
+    // =================
+document.write("<h3>do While Loop</h3>");
+var j = 0; // initialize a variable j to 0
+do{ // repeat the action at least once and then check the condition
+    document.write("The value of j is: " + j + "<br>"); // print the value of j in each iteration
+    j++; // increment j by 1 in each iteration
+} while(j < 5); // repeat the action until j is less than 5
 </script>
 </body>
 </html>
