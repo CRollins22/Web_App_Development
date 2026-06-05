@@ -1,74 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<script src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/script.js"></script>
 </head>
-<body>
 <body onload="starTime()">
-<script>
-// JavaScript code goes here
-var fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
-document.write(fruits.join(", "));
-</script>
-<br>
-<script>
-// evoking the function from script.js
-document.write(greetings("Alex Okama"));
-</script>
-<br>
     <script>
-        // Get the current date and time
-        var today = new Date();
-        var day = today.getDate();
-        var month = today.getMonth() + 1; // Months are zero-based
-        var year = today.getFullYear();
-        document.write("Today's date is: " + day + "/" + month + "/" + year);
+    // JavaScript code goes here
+    var fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+    document.write(fruits.join(", "));
     </script>
+    <br>
+    <script>
+        // evoking the function from script.js
+        document.write(greetings("Alex Okama"));
+    </script>
+    <br>
 <p id="realTime"></p>
-
 <script>
-    var colours = ["Red", "Green", "Blue", "Yellow", "Purple"];
-    document.write(colours[0] + "<br>"); // Output: Red
-    document.write(colours[1] + "<br>"); // Output: Green
-    document.write(colours[2] + "<br>"); // Output: Blue
-
-    //Objects
-    var userDetails = {
-        "Director":{
-            "fullname": ["Alex Okama"],
-            "email": {
-                "Home email": "alex.okama@company.com",
+    // indexed arrays
+    var colors = ["Red", "Green", "Blue", "Yellow", "Purple"];
+    document.write(colors[0] + "<br>");
+    document.write(colors[1] + "<br>");
+    document.write(colors[2] + "<br>");
+    // Objects
+    var usersDetails = {
+        Director:{
+            fullname: ["Alex", "Okama"],
+            email: {
+                "Home email": "alex.okama@example.com",
                 "Work email": "alex.okama@work.com"
             },
-            "phone": "123-456-7890"
+            phone: "+254712345678"
         },
-        "Manager":{
-        "fullname": ["Jane", "Smith"],
-        "email": {
-            "Home email": "jane.smith@example.com",
-            "Work email": "jane.smith@work.com"
+        Manager:{
+            fullname: ["Ann", "Smith"],
+            email: {
+                "Home email": "ann.smith@example.com",
+                "Work email": "ann.smith@work.com"
+            },
+            phone: "+254712345679"
         },
-        "phone": "987-654-3210"
-    },
-    "Secretary":{
-        "fullname": "Emily Davis",
-        "email": {
-            "Home email": "emily.davis@example.com",
-            "Work email": "emily.davis@work.com"
+        Secretary:{
+            fullname: ["Dennis", "Okama"],
+            email: {
+                "Home email": "dennis.okama@example.com",
+                "Work email": "dennis.okama@work.com"
+            },
+            phone: "+254712345680"
         },
-        "phone": "555-123-4567"
-        },
+        getDirectorEmail: function() {
+            return this.Director.email["Home email"];
+        }   
     };
-    document.write(userDetails.Director.fullname.join("")+ "<br>"); // Output: Alex Okama
-    document.write(userDetails.Secretary.email["Home email"] + "<br>"); //POSSIBLE EXAM QUESTION: Here you have to use the bracket notation instead of the dot notation because the attribute "Home email" has a space in it
-    document.write(userDetails.Manager.email["Work email"] + "<br>"); // Output: jane.smith@work.com
-    document.write(userDetails.Secretary.phone + "<br>"); // Output: 555-123-4567
+    document.write(usersDetails.Director.fullname.join(" ") + "<br>");
+    document.write(usersDetails.Secretary.email["Home email"] + "<br>");
+    document.write(usersDetails.Manager.email["Work email"] + "<br>");
+    // document.write(usersDetails.Manager.email.Work email + "<br>");
+    document.write(usersDetails.Director.phone + "<br>");
+
+    document.write(usersDetails.getDirectorEmail() + "<br>");
 
 
-     // Loops in JavaScript
+    // Loops in JavaScript
     // Rule repeat action until a certain condition is met i < 5
     // initialize a variable i = 0
     // increment i by 1 in each iteration
@@ -92,6 +88,76 @@ do{ // repeat the action at least once and then check the condition
     document.write("The value of j is: " + j + "<br>"); // print the value of j in each iteration
     j++; // increment j by 1 in each iteration
 } while(j < 5); // repeat the action until j is less than 5
+
+
+    // =================
+    // for loop
+    // =================
+document.write("<h3>for Loop</h3>");
+for(var k = 0; k < 5; k++){ // initialize a variable k to 0, repeat the action until k is less than 5, and increment k by 1 in each iteration
+    document.write("The value of k is: " + k + "<br>"); // print the value of k in each iteration
+}
+
+    // =================
+    // array loop
+    // =================
+document.write("<h3>Array Loop</h3>");
+var fruits = ["Apple", "Banana", "Cherry", "Pineapple", "Mango"]; // initialize an array of fruits
+for(var l = 0; l < fruits.length; l++){ // initialize a variable l to 0, repeat the action until l is less than the length of the array, and increment l by 1 in each iteration
+    document.write("The fruit is: " + fruits[l] + "<br>"); // print the value of the array element in each iteration
+}
+document.write("<h3>Array Loop New</h3>");
+for(var fruit of fruits){ // initialize a variable fruit to the value of each element in the array, and repeat the action for each element in the array
+    document.write("The fruit is: " + fruit + "<br>"); // print the value of the array element in each iteration
+}
+document.write("<h3>Array Loop using forEach</h3>");
+fruits.forEach(function(fruit){ // use the forEach method to iterate over each element in the array
+    document.write("The fruit is: " + fruit + "<br>"); // print the value of the array element in each iteration
+});
+
+var TimeDate = new Date();
 </script>
+<form action="" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="bod">Date of Birth:</label>
+        
+    <select id="day" name="day">
+        <script>
+            document.write("<option value=''>" + TimeDate.getDate() + " </option>");
+            for(var day = 1; day <= DaysInMonths(TimeDate); day++){
+                if(day === TimeDate.getDate()){ continue; }
+                document.write("<option value='" + day + "'>" + day + "</option>");
+            }
+        </script>
+    </select>
+    <select id="month" name="month">
+        <script>
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            document.write("<option value=''>" + months[TimeDate.getMonth()] + "</option>");
+            for(var month of months){
+                if(month === months[TimeDate.getMonth()]){ continue; }
+                document.write("<option value='" + month + "'>" + month + "</option>");
+            }
+        </script>
+    </select>
+    <select id="year" name="year">
+        <script>
+            var currentYear = TimeDate.getFullYear();
+            var minYear = currentYear - 50;
+            document.write("<option value=''>" + currentYear + "</option>");
+            for(var year = currentYear; year >= minYear; year--){
+                document.write("<option value='" + year + "'>" + year + "</option>");
+            }
+        </script>
+    </select>
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
+
 </body>
 </html>
